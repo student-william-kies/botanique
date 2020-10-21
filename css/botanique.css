@@ -1,0 +1,831 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Sacramento&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sansita+Swashed&display=swap');
+@font-face{font-family: 'evilgreenplant1.ttf'; src: url('../font/evilgreenplant1.ttf');}
+@font-face{font-family : 'Harukaze.ttf';src: url(../font/Harukaze.ttf);}
+@font-face{font-family: 'CFGeneralTao-Regular.ttf';src: url(../font/CFGeneralTao-Regular.ttf);}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+/* NAVIGATION */
+
+.navbar-brand{
+  width: 20%;
+}
+
+.navbar-brand img{
+  width: 100%;
+}
+
+/* FIN NAVIGATION */
+
+/* PAGE ACCUEIL */
+
+#w-body-accueil{
+  background-image: url(../images/w-bg-accueil.svg);
+}
+
+.w-main-info-section{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #fff;
+  text-align: center;
+  margin-top: 15%;
+}
+
+.w-main-info-section h1{
+  text-transform: uppercase;
+  font-size: 70px;
+  letter-spacing: 2px;
+}
+
+.w-main-info-section h2{
+  font-style: italic;
+  font-size: 24px;
+  font-family: 'Dancing Script', cursive;
+}
+
+/* BTN ACCUEIL */
+
+.wrapper-accueil{
+  position: fixed;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.link_wrapper-accueil{
+  position: relative;
+}
+
+#btn-accueil{
+  display: block;
+  width: 250px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  font-weight: bold;
+  text-decoration: none;
+  background: #333;
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 3px solid #333;
+  transition: all .35s;
+}
+
+.icon-accueil{
+  width: 50px;
+  height: 50px;
+  border: 3px solid transparent;
+  position: absolute;
+  transform: rotate(45deg);
+  right: 0;
+  top: 0;
+  z-index: -1;
+  transition: all .35s;
+}
+
+.icon-accueil svg{
+  width: 30px;
+  position: absolute;
+  top: calc(50% - 15px);
+  left: calc(50% - 15px);
+  transform: rotate(-45deg);
+  fill: #2ecc71;
+  transition: all .35s;
+}
+
+#btn-accueil:hover{
+  width: 200px;
+  border: 3px solid #2ecc71;
+  background: #333;
+  color: #2ecc71;
+}
+
+#btn-accueil:hover + .icon-accueil{
+  border: 3px solid #2ecc71;
+  right: -25%;
+}
+
+/* PAGE PRESENTATION */
+
+.w-info-presentation{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  background: #222;
+  background-image: repeating-linear-gradient(to bottom, transparent 7px, rgba(0, 0, 0, 0.8) 9px, rgba(0, 0, 0, 0.8) 13px, transparent 13px);
+  font-family: 'Sacramento', cursive;
+}
+
+/* ANIMATION TITLE */
+
+.w-info-presentation, .w-glow{
+  font-size: calc(20px + 18vh);
+  line-height: calc(20px + 20vh);
+  text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+  color: #fff6a9;
+  font-family: "Sacramento", cursive;
+  text-align: center;
+  animation: blink 12s infinite;
+  -webkit-animation: blink 12s infinite;
+}
+
+@-webkit-keyframes blink{
+  20%, 24%, 55%{
+    color: #111;
+    text-shadow: none;
+  }
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100%{
+  text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000; color: #fff6a9;
+  }
+}
+
+@keyframes blink{
+  20%, 24%, 55%{
+    color: #111;
+    text-shadow: none;
+  }
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100%{
+  text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000; color: #fff6a9;
+  }
+}
+
+/* ANCRE PLANTES */
+
+.w-plantes-section{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #f4f3ef;
+  border-bottom: solid 1px #e5e2d4;
+  align-items: center;
+}
+
+.w-plantes-section h1{
+  color: #ffcfcf;
+  text-align: center;
+  margin-bottom: 7%;
+  margin-top: -5%;
+  text-transform: uppercase;
+  text-shadow: 0px 3px 0px #b2a98f, 0px 14px 10px rgba(0,0,0,0.15), 0px 24px 2px rgba(0,0,0,0.1), 0px 34px 30px rgba(0,0,0,0.1);
+}
+
+.w-info-plantes{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.w-info-plantes img{
+  width: 50%;
+  box-shadow: 0px 3px 0px #b2a98f, 14px 14px 10px rgba(0,0,0,0.15), 24px 24px 2px rgba(0,0,0,0.1), 34px 34px 30px rgba(0,0,0,0.1);
+}
+
+.w-card-plantes{
+  height: 52%;
+  box-shadow: 0px 3px 0px #b2a98f, 14px 14px 10px rgba(0,0,0,0.15), 24px 24px 2px rgba(0,0,0,0.1), 34px 34px 30px rgba(0,0,0,0.1);
+}
+
+/* ANCRE FLEURS */
+
+.w-fleurs-section{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #f4f3ef;
+  border-bottom: solid 1px #e5e2d4;
+  align-items: center;
+}
+
+.w-fleurs-section h1{
+  color: #ffcfcf;
+  text-align: center;
+  margin-bottom: 7%;
+  margin-top: -5%;
+  text-transform: uppercase;
+  text-shadow: 0px 3px 0px #b2a98f, 0px 14px 10px rgba(0,0,0,0.15), 0px 24px 2px rgba(0,0,0,0.1), 0px 34px 30px rgba(0,0,0,0.1);
+}
+
+.w-info-fleurs{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.w-info-fleurs img{
+  width: 50%;
+  box-shadow: 0px 3px 0px #b2a98f, 14px 14px 10px rgba(0,0,0,0.15), 24px 24px 2px rgba(0,0,0,0.1), 34px 34px 30px rgba(0,0,0,0.1);
+}
+
+.w-info-fleurs .w-card-fleurs{
+  height: 70%;
+  box-shadow: 0px 3px 0px #b2a98f, 14px 14px 10px rgba(0,0,0,0.15), 24px 24px 2px rgba(0,0,0,0.1), 34px 34px 30px rgba(0,0,0,0.1);
+}
+
+/* ANCRE ARBUSTES */
+
+.w-arbustes-section{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #f4f3ef;
+  border-bottom: solid 1px #e5e2d4;
+  align-items: center;
+}
+
+.w-arbustes-section h1{
+  color: #ffcfcf;
+  text-align: center;
+  margin-bottom: 7%;
+  margin-top: -5%;
+  text-transform: uppercase;
+  text-shadow: 0px 3px 0px #b2a98f, 0px 14px 10px rgba(0,0,0,0.15), 0px 24px 2px rgba(0,0,0,0.1), 0px 34px 30px rgba(0,0,0,0.1);
+}
+
+.w-info-arbustes{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: -2%;
+}
+
+.w-info-arbustes img{
+  width: 70%;
+  box-shadow: 0px 3px 0px #b2a98f, 14px 14px 10px rgba(0,0,0,0.15), 24px 24px 2px rgba(0,0,0,0.1), 34px 34px 30px rgba(0,0,0,0.1);
+}
+
+.w-info-arbustes .w-card-arbustes{
+  height: 70%;
+  margin-left: 12%;
+  box-shadow: 0px 3px 0px #b2a98f, 14px 14px 10px rgba(0,0,0,0.15), 24px 24px 2px rgba(0,0,0,0.1), 34px 34px 30px rgba(0,0,0,0.1);
+}
+
+/* ANCRE LEGUMES */
+
+.w-legumes-section{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #f4f3ef;
+  border-bottom: solid 1px #e5e2d4;
+  align-items: center;
+}
+
+.w-legumes-section h1{
+  color: #ffcfcf;
+  text-align: center;
+  margin-bottom: 7%;
+  margin-top: -5%;
+  text-transform: uppercase;
+  text-shadow: 0px 3px 0px #b2a98f, 0px 14px 10px rgba(0,0,0,0.15), 0px 24px 2px rgba(0,0,0,0.1), 0px 34px 30px rgba(0,0,0,0.1);
+}
+
+.w-info-legumes{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.w-info-legumes img{
+  width: 25%;
+  margin-right: 6%;
+  box-shadow: 0px 3px 0px #b2a98f, 14px 14px 10px rgba(0,0,0,0.15), 24px 24px 2px rgba(0,0,0,0.1), 34px 34px 30px rgba(0,0,0,0.1);
+}
+
+.w-info-legumes .w-card-legumes{
+  height: 95%;
+  box-shadow: 0px 3px 0px #b2a98f, 14px 14px 10px rgba(0,0,0,0.15), 24px 24px 2px rgba(0,0,0,0.1), 34px 34px 30px rgba(0,0,0,0.1);
+}
+
+/* PAGE PLANTES */
+
+#g-plantes-carnivores{
+  height: 100vh;
+}
+
+.g-titre-b{
+  margin-top: 3%;
+  color: black;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  font-family: 'evilgreenplant1.ttf';
+  text-align: center;
+  background-image: url(../images/g-bg-plantes.webp);
+  background-position: center;
+}
+
+#g-taille-c{
+  margin-top: 1%;
+  width: 70%;
+  margin-left: 15%;
+}
+
+.carousel-control-next{
+  background-color: black;
+}
+
+.carousel-control-prev{
+  background-color: black;
+}
+
+.g-intro-text{
+  font-weight: bold;
+  margin-top: 1%;
+  text-align: center;
+}
+
+.g-titre-plantes{
+  color: black;
+  font-family: 'evilgreenplant1.ttf';
+  text-shadow: 1px 2px 2px black;
+}
+
+.g-dionaea{
+  padding-top: 2%;
+  border-top: solid 1px  #ae8964;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#g-dionaea1{
+  display: flex;
+  flex-direction: column;
+  margin-left: 2%;
+}
+
+#g-dionaea-video{
+  border: 5px solid black;
+  margin-right: 2%;
+  height: 350px;
+  width: 500px;
+  border-radius: 20px
+}
+
+.g-drosera{
+  padding-top: 2%;
+  border-top: solid 1px  #ae8964;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#g-drosera1{
+  margin-top: 1%;
+  display: flex;
+  flex-direction: column;
+  margin-right: 2%;
+}
+
+#g-drosera-video{
+  border: 5px solid black;
+  height: 350px;
+  width: 500px;
+  border-radius: 20px;
+  margin-left: 2%;
+}
+
+.g-sarracenia{
+  padding-top: 2%;
+  border-top: solid 1px  #ae8964;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#g-sarracenia1{
+  display: flex;
+  flex-direction: column;
+  margin-left: 2%;
+}
+
+#g-sarracenia-video{
+  border: 5px solid black;
+  margin-right: 2%;
+  height: 350px;
+  width: 500px;
+  border-radius: 20px
+}
+
+
+#g-titre-fin{
+  border-top: solid 1px  #ae8964;
+  margin-top: 1%;
+  text-align: center;
+  color: black;
+  font-family: 'evilgreenplant1.ttf';
+  text-shadow: 1px 2px 2px black;
+}
+
+#g-liens-utiles i{
+  color: green;
+  margin-top: 1%;
+  font-size: 50px;
+}
+
+#g-liens-utiles{
+  margin-top: 1%;
+  margin-left: 35%;
+  margin-right: 35%;
+  display: flex;
+  justify-content: space-around;
+  justify-content: space-between;
+  text-align: center;
+  margin-bottom: 2%;
+}
+
+.g-déco-pic{
+  border-radius: 20px;
+  margin-top: 2%;
+  margin-bottom: 1%;
+  width: 40%;
+  height: 30%;
+  margin-left: 30%;
+  -webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+	-webkit-transition: 1s ease-in-out;
+	transition: .3s ease-in-out;
+}
+
+.g-déco-pic:hover{
+  -webkit-filter: grayscale(0);
+	filter: grayscale(0);
+}
+
+/* PAGE FLEURS */
+
+.w-main-fleurs-section{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  letter-spacing: 2px;
+  background-image: url(../images/bg-main-fleurs.svg);
+  align-items: center;
+}
+
+.w-main-fleurs-section h1{
+  text-transform: uppercase;
+  margin-top: -5%;
+  margin-bottom: 5%;
+  text-shadow: 0px 3px 0px #b2a98f, 0px 14px 10px rgba(0,0,0,0.15), 0px 24px 2px rgba(0,0,0,0.1), 0px 34px 30px rgba(0,0,0,0.1);
+}
+
+/* ENCRE TYPE */
+
+.w-type-fleurs{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  background-image: url(../images/w-bg-type-fleurs.svg);
+}
+
+.w-type-fleurs h1{
+  text-transform: uppercase;
+  color: #710037;
+  text-shadow: 0px 3px 0px #b2a98f, 0px 14px 10px rgba(0,0,0,0.15), 0px 24px 2px rgba(0,0,0,0.1), 0px 34px 30px rgba(0,0,0,0.1);
+  margin-left: 1%;
+}
+
+.w-type-info-fleurs{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.w-type-info-fleurs img{
+  width: 22%;
+  margin-top: -50%;
+  box-shadow: 0px 3px 0px #b2a98f, 14px 14px 10px rgba(0,0,0,0.15), 24px 24px 2px rgba(0,0,0,0.1), 34px 34px 30px rgba(0,0,0,0.1);
+}
+
+.w-card-type-fleurs{
+  margin-top: -50%;
+  margin-right: 20%;
+  box-shadow: 0px 3px 0px #b2a98f, 14px 14px 10px rgba(0,0,0,0.15), 24px 24px 2px rgba(0,0,0,0.1), 34px 34px 30px rgba(0,0,0,0.1);
+}
+
+/* ENCRE ENTRETIEN */
+
+.w-entretien-fleurs{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  background-image: url(../images/w-bg-entretien-fleurs.svg);
+}
+
+.w-entretien-fleurs h1{
+  text-transform: uppercase;
+  color: #710037;
+  text-shadow: 0px 3px 0px #b2a98f, 0px 14px 10px rgba(0,0,0,0.15), 0px 24px 2px rgba(0,0,0,0.1), 0px 34px 30px rgba(0,0,0,0.1);
+  text-align: right;
+  margin-right: 1%;
+}
+
+.w-entretien-info-fleurs{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.w-entretien-info-fleurs img{
+  width: 25%;
+  margin-top: -50%;
+  box-shadow: 0px 3px 0px #b2a98f, 14px 14px 10px rgba(0,0,0,0.15), 24px 24px 2px rgba(0,0,0,0.1), 34px 34px 30px rgba(0,0,0,0.1);
+}
+
+.w-card-entretien-fleurs{
+  margin-top: -50%;
+  box-shadow: 0px 3px 0px #b2a98f, 14px 14px 10px rgba(0,0,0,0.15), 24px 24px 2px rgba(0,0,0,0.1), 34px 34px 30px rgba(0,0,0,0.1);
+}
+
+/* ENCRE VARIETE */
+
+.w-variete-fleurs{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  background-image: url(../images/w-bg-variete-fleurs.svg);
+  align-items: center;
+}
+
+.w-variete-fleurs h1{
+  text-transform: uppercase;
+  color: #710037;
+  text-shadow: 0px 3px 0px #b2a98f, 0px 14px 10px rgba(0,0,0,0.15), 0px 24px 2px rgba(0,0,0,0.1), 0px 34px 30px rgba(0,0,0,0.1);
+  text-align: center;
+  margin-bottom: 5%;
+  margin-top: -5%;
+}
+
+.w-variete-info-fleurs{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-variete{
+  width: 70%;
+}
+
+/* PAGE ARBUSTES */
+
+#g-a-body{
+  background-image: url(../images/g-a-bg.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+}
+
+#g-a-main{
+  font-family: 'CFGeneralTao-Regular.ttf';
+  margin-top: 5%;
+}
+
+.g-a-title{
+  font-size: 100px;
+  font-family: 'Harukaze.ttf';
+}
+
+.g-a-text{
+  line-height: 28px;
+  color: black;
+  text-shadow: 2px 3px 3px 	white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.g-a-bonsai1{
+  -webkit-transform: scale(1);
+	transform: scale(1);
+  border: solid 3px white;
+  -webkit-filter: sepia(100%);
+	filter: sepia(100%);
+	-webkit-transition: .6s ease-in-out;
+	transition: .6s ease-in-out;
+  margin-top: 1%;
+  width: 60%;
+}
+
+.g-a-bonsai1:hover{
+  -webkit-transform: scale(0.99);
+	transform: scale(0.99);
+  box-shadow: 0px 3px 14px 14px #7f3b36;
+  -webkit-filter: sepia(0);
+	filter: sepia(0);
+}
+
+.g-a-bonsai2{
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  border: solid 3px white;
+  -webkit-filter: sepia(100%);
+	filter: sepia(100%);
+	-webkit-transition: 0.6s ease-in-out;
+	transition: 0.6s ease-in-out;
+  margin-top: 1%;
+  width: 30%;
+  height: 10%;
+}
+
+.g-a-bonsai2:hover{
+  -webkit-transform: scale(0.99);
+  transform: scale(0.99);
+  box-shadow: 0px 3px 14px 14px 	#7f3b36;
+  -webkit-filter: sepia(0);
+	filter: sepia(0);
+}
+
+#g-a-pic{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 5%;
+}
+
+#g-a-audio{
+  background-color: #7f3b36;
+  border-radius: 50px;
+  margin-top: -2%;
+}
+
+/* PAGE LEGUMES */
+
+#g-l-body{
+  background-color: #DF6D14 ;
+  color: black;
+
+}
+
+#g-l-main{
+    font-family: 'Sansita Swashed', cursive;
+}
+
+.g-l-intro{
+  background-size: cover;
+  margin-left: -0.8%;
+  margin-right: -0.8%;
+  height: 100vh;
+  background-image: url(../images/g-l-bg.jpg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-bottom: solid 2px brown;
+}
+.g-l-text-main{
+  border-radius: 15px;
+  text-align: center;
+  color: black;
+  font-size: 19px;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding-top: 1%;
+  margin-left: 6%;
+  margin-right: 6%;
+}
+
+.g-l-déco{
+  font-size: 18px;
+  justify-content: space-around;
+  justify-content: space-between;
+  margin-top: 3%;
+  margin-right: 3%;
+  margin-left: 3%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#g-l-déco1{
+  margin-left: 0px;
+	-webkit-transition: 1s ease-in-out;
+	transition: .3s ease-in-out;
+  box-shadow: 0px 0px 0px #b2a98f, 14px 14px 10px rgba(0,0,0,0.15), 24px 24px 2px rgba(0,0,0,0.1), 34px 34px 30px rgba(0,0,0,0.1);
+  width: 35%;
+}
+#g-l-déco1:hover{
+  margin-left: -30px;
+}
+
+#g-l-déco2{
+  margin-right: 0px;
+	-webkit-transition: 1s ease-in-out;
+	transition: .3s ease-in-out;
+  box-shadow: 0px 0px 0px #b2a98f, 14px 14px 10px rgba(0,0,0,0.15), 24px 24px 2px rgba(0,0,0,0.1), 34px 34px 30px rgba(0,0,0,0.1);
+  width: 40%;
+}
+
+#g-l-déco2:hover{
+  margin-right: -30px;
+}
+
+#g-l-déco3{
+  margin-left: 0px;
+	-webkit-transition: 1s ease-in-out;
+	transition: .3s ease-in-out;
+  box-shadow: 0px 0px 0px #b2a98f, 14px 14px 10px rgba(0,0,0,0.15), 24px 24px 2px rgba(0,0,0,0.1), 34px 34px 30px rgba(0,0,0,0.1);
+  width: 30%;
+}
+
+#g-l-déco3:hover{
+    margin-left: -30px;
+}
+
+#g-l-end{
+  margin-top: 5%;
+  text-align: center;
+  font-size: 22px;
+}
+
+/* FOOTER */
+
+.footer{
+  background: rgb(23, 32, 42);
+  height: 25vh;
+  border-top: solid 1px #e5e2d4;
+}
+
+.footer-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  justify-content: center;
+}
+
+.center-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.center-content h1{
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 10%;
+}
+
+.center-content h2{
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+}
+
+.social-media{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  justify-content: center;
+  margin-left: -7%;
+}
+
+.social-media a{
+  font-size: 26px;
+  margin-left: 6%;
+  text-decoration: none;
+  color: #fff;
+}
+
+.social-media a:hover{
+  color: #212529;
+}
+
+.center-content p{
+  color: #d3d8dd;
+  text-align: center;
+  margin-top: 12%;
+  font-size: 14px;
+}
